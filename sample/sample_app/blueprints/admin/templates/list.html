@@ -1,0 +1,14 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<article>
+    <h1>List of objects</h1>
+    <a href="/admin/add/">Add</a>
+    <ul>
+    {% for o in objects %}
+        <li>{{o.title}}</li>
+    {% endfor %}
+    </ul>
+</article>
+
+{% endblock %}

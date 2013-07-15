@@ -1,0 +1,19 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<article>
+    <h1>Add Element</h1>
+     <form action="/admin/add/" method="POST">
+        <label>
+            Title:
+            <input type="text" name="title" value="{{form.title}}">
+        {% if form.title_error %}
+            <span style="color:red;">{{form.title_error}}</span>
+        {% endif %}
+        </label>
+        <br/>
+        <input type="submit" value="Ok">
+    </form>
+</article>
+
+{% endblock %}
