@@ -10,7 +10,7 @@ from setuptools import setup
 
 setup(
     name='Flask-Nytro',
-    version='1.0.2',
+    version='1.1',
     url='http://github.com/sacanix/Flask-Nytro',
     license='BSD',
     author='Tony Kamillo (Sacanix)',
@@ -20,7 +20,7 @@ setup(
     long_description=__doc__,
     # if you would be using a package instead use packages instead
     # of py_modules:
-    #py_modules=['flask_nytro.he'],
+    #py_modules=[''],
     packages=['flask_nytro', 'flask_nytro.helpers'],
     #zip_safe=False,
     include_package_data=True,

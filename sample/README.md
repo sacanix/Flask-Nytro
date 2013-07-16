@@ -1,7 +1,8 @@
 Running the sample_app
 ======================
 
-Follow the steps bellow:
+Follow the steps below:
+
 
 ```bash
 $ cd flask_nytro/sample
