@@ -1,21 +1,21 @@
 Flask Nytro
 ===========
 
-Nytro is an extension to help developer providing a set of useful tools
+Nytro is an extension to help the developers providing a set of useful tools
 giving even more facility to development apps with Flask.
 
 ## Benefits
 
 1. Creates your blueprints with the *template* and *static* folders setted automatically like a app, but another place can be setted with you want.    
 
-2. Allows to attch *blueprins* on app automaticaly by convention or granularity by configuration.    
+2. Allows to attch *blueprins* on app automatically by convention or granularity by configuration.    
 
-3. Brings a few (for now) helper functions to create: a slug, a random key and the intermediate table for Many to Many relationship for SQLAlchemy.
+3. Brings a few (for now) helper functions to create: a slug, a random key and the intermediate table for many-to-many relationship for SQLAlchemy.
 
-##Usage
+##Quick Tutorial
 
 
-1. Create a bluepirnt like bellow:    
+1. Create the bluepirnt **simple_bp.py** inside app folder, with the content like bellow:    
 
       
     ```python
@@ -29,9 +29,47 @@ giving even more facility to development apps with Flask.
         return render('index.html')    
     ```
 2. On the same level of the blueprint file, create the *static* and *templates* folders.
-3. In the *templates* folder that you created, create the *index.html* file with any content.
-3. Execute the aplication. 
-4.
+
+3. In the *templates* folder that you just created, create the **index.html** file with any content, also create the **foo.txt** file with a some content in the *static* folder that you, too, just created. 
+
+
+4. In the file that creates the flask app, import the nytro Blueprint and add the line **Blueprint.attach_all(app)**. Some like this:
+    ```python 
+    from flask import Flask
+    from flask.ext.nytro import Blueprint
+
+    #Creates an app
+    app = Flask(__name__)
+
+    
+    #Attaches all blueprints to app automatically by convention or configuration
+    Blueprint.attach_all(app)    
+    ```
+    
+
+5. In your **settings.py** file add the option **BLUEPRINTS** as tuple of import paths. Like bellow:
+    ```python
+    BLUEPRINTS = (
+        'my_app.simple_bp',
+        #or
+        'simple_bp'
+        #if the blueprint file is imediatally inside the app folder
+    )
+    ```
+    In this way you can enable and disable blueprints by configuration, like django plugable apps.
+    
+       **HINT:** You can put the BLUEPRINT option where you prefer, for example, inside the module that create the Flask app.
+       
+       By convention, you can load blueprints automatically. To do that, just create a ***blueprints*** folder inside the app folder and created them there. But, in this approach is needed to work the blueprint as package. For more information see the **sample**. Also you can change the folder that holds the blueprints that will loaded automatically through option BLUEPRINTS_FOLDER.
+
+6. Execute the aplication. 
+
+7. Try access http://127.0.0.1:5000/my-bp/ to render the **index.html** template.
+
+8. Try access http://127.0.0.1:5000/my-bp/static/foo.txt to show the content of **foo.txt**.
+
+
+Please, see the **sample** to complete view.
 
 ## Instalation
 ```bash
