@@ -71,7 +71,7 @@ giving even more facility to development apps with Flask.
 
 Please, see the **sample** for a better understand.
 
-## Instalation
+## Installation
 ```bash
 $ pip install flask-nytro
 ```
