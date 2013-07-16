@@ -5,7 +5,7 @@ Follow the steps below:
 
 
 ```bash
-$ cd flask_nytro/sample
+$ cd Flask-Nytro/sample
 ```
 ```bash
 $ virtualenv env
@@ -22,3 +22,13 @@ $ python manage.py syncdb
 ```bash
 $ python manage.py runserver
 ```
+
+####Try theses urls
+>http://127.0.0.1:5000
+
+>http://127.0.0.1:5000/admin
+
+>http://127.0.0.1:5000/admin/all
+
+>http://127.0.0.1:5000/admin/add
+
