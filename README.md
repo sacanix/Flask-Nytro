@@ -52,8 +52,8 @@ giving even more facility to development apps with Flask.
     BLUEPRINTS = (
         'my_app.simple_bp',
         #or
-        'simple_bp'
-        #if the blueprint file is imediatally inside the app folder
+        #'simple_bp'
+        #if the blueprint file is immediataly inside the app folder
     )
     ```
     In this way you can enable and disable blueprints through configuration, like django pluggable apps.
