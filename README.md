@@ -58,7 +58,7 @@ giving even more facility to development apps with Flask.
     ```
     In this way you can enable and disable blueprints through configuration, like django pluggable apps.
     
-       **HINT:** You can put the BLUEPRINT option where you prefer, for example, inside the module that create the Flask app.
+       **HINT:** You can put the BLUEPRINT option where you prefer, for example, inside the module that creates the Flask app.
        
        By convention, you can load blueprints automatically. To do that, just create a ***blueprints*** folder inside the app folder and create them there. But, for this approach, is required to work the blueprint as package. For more information see the **sample**. Also you can change the folder that holds the blueprints that will be loaded automatically through option BLUEPRINTS_FOLDER.
 
